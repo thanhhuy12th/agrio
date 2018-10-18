@@ -1,0 +1,141 @@
+<div class="card-body">
+	<div class="row">
+		<div class="col-md-8">
+			<h4 class="pull-left">Thông tin đơn hàng</h4>
+			<button class="btn btn-primary btn-sm pull-right">In đơn hàng</button>
+			<div class="clearfix"></div>
+			<hr />
+			<h6>Sub Website: Tinh dầu chúc An Giang</h6>
+			<hr />
+			<table>
+				<tr>
+					<th>Tên sản phẩm</th>
+					<th>Số lượng</th>
+					<th>Đơn giá</th>
+				</tr>
+				<tr>
+					<td>Tinh Dầu Trái Chúc Phạm Mỹ</td>
+					<td>1</td>
+					<td>350.000</td>
+				</tr>
+				<tr>
+					<td>Trái Chúc 7 Núi</td>
+					<td>2</td>
+					<td>295,000</td>
+				</tr>
+				<tr>
+					<td colspan="3"> 
+						<hr />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">Tổng giá</td>
+					<td>645.000</td>
+				</tr>
+				<tr>
+					<td colspan="2">Vận chuyển</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td colspan="2">Tổng tiền</td>
+					<td>645.000</td>
+				</tr>
+				<tr>
+					<td colspan="3"> 
+						<hr />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">Xác nhận đã thanh toán</td>
+					<td>
+						<button *ngIf="!isUndoPayment" class="btn btn-success btn-sm">Xác nhận</button>
+						<button *ngIf="isUndoPayment" class="btn btn-warning btn-sm">Hoàn tác</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">Xác nhận đã giao hàng</td>
+					<td>
+						<button *ngIf="!isUndoDelivery" class="btn btn-success btn-sm">Xác nhận</button>
+						<button *ngIf="isUndoDelivery" class="btn btn-warning btn-sm">Hoàn tác</button>
+					</td>
+				</tr>
+			</table>
+			
+		</div>
+		<div class="col-md-4">
+			<h4 class="pull-left">Thông tin khách hàng</h4>
+			<i class="fa fa-pencil pull-right" (click)="showUpdateCustomer()"></i>
+			<div class="clearfix"></div>
+			<hr />
+			<p>Họ tên: Cao Hữu Thành Huy</p>
+			<p>Phone: 0363902688</p>
+			<p>Địa chỉ: 399/3 Tây Khánh 4</p>
+			<p>Tỉnh: An Giang</p>
+			<p>Quận/Huyện: Long Xuyên</p>
+			<p>Ghi chú:</p>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateCustomer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Thông tin khách hàng</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group row">
+					<div class="col-md-12">
+						<input type="text" placeholder="Nhập họ tên ..." class="form-control" value="Cao Hữu Thành Huy">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-12">
+						<input type="text" placeholder="Nhập số điện thoại ..." class="form-control" value="0363902688">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-12">
+						<textarea placeholder="Nhập địa chỉ ..." class="form-control">399/3 Tây Khánh 4</textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-12">
+						<select class="form-control">
+						<option>-- Lựa chọn tỉnh --</option>
+							<option>Cần Thơ</option>
+							<option selected="">An Giang</option>
+							<option>Tp. Hồ Chí Minh</option>
+							<option>Hà Nội</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-12">
+						<select class="form-control">
+						<option>-- Lựa chọn tỉnh --</option>
+							<option>Châu Đốc</option>
+							<option selected="">Long Xuyên</option>
+							<option>Tri Tôn</option>
+							<option>Chợ Mới</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-12">
+						<textarea placeholder="Nhập ghi chú ..." class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<input type="hidden" name="hideId" id="idOrder">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Thôi, không cập nhật</button>
+				<button type="button" class="btn btn-success" (click)="updateCustomer()">Vâng, cập nhật đi</button>
+			</div>
+		</div>
+	</div>
+</div>

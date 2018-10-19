@@ -4,6 +4,7 @@ import { AdminPageDeliveryListComponent } from './admin-page-delivery-list/admin
 import { AdminPageDeliveryAddComponent } from './admin-page-delivery-add/admin-page-delivery-add.component';
 import { AdminPageDeliveryUpdateComponent } from './admin-page-delivery-update/admin-page-delivery-update.component';
 
+import { AdminComponentModule } from '../../../../components/index.module';
 
 const routes: Routes = [
 	{
@@ -34,7 +35,7 @@ const routes: Routes = [
 		AdminPageDeliveryAddComponent,
 		AdminPageDeliveryUpdateComponent
 	],
-	imports: [RouterModule.forChild(routes)],
+	imports: [RouterModule.forChild(routes),AdminComponentModule],
 	exports: [RouterModule]
 })
 export class AdminSettingDeliveryRoutingModule { }

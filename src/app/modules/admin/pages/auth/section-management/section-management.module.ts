@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { SectionManagementRoutingModule } from './section-management-routing.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
     SectionManagementRoutingModule
   ],
-  declarations: []
+  declarations: [
+
+  ]
 })
 export class SectionManagementModule { }

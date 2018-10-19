@@ -23,6 +23,7 @@ import { AdminSettingDeliveryUpdateComponent } from './setting/delivery/admin-se
 import { AdminSettingPaymentListComponent } from './setting/payment/admin-setting-payment-list/admin-setting-payment-list.component';
 import { AdminSettingPaymentAddComponent } from './setting/payment/admin-setting-payment-add/admin-setting-payment-add.component';
 import { AdminSettingPaymentUpdateComponent } from './setting/payment/admin-setting-payment-update/admin-setting-payment-update.component';
+import { CAdminSectionHotlineComponent } from './section-management/c-admin-section-hotline/c-admin-section-hotline.component';
 
 @NgModule({
 	imports: [
@@ -52,7 +53,8 @@ import { AdminSettingPaymentUpdateComponent } from './setting/payment/admin-sett
 		AdminSettingDeliveryUpdateComponent, 
 		AdminSettingPaymentListComponent, 
 		AdminSettingPaymentAddComponent, 
-		AdminSettingPaymentUpdateComponent
+		AdminSettingPaymentUpdateComponent, 
+		CAdminSectionHotlineComponent
 	],
 	exports: [
 		AdminHeaderTitleComponent,
@@ -74,7 +76,8 @@ import { AdminSettingPaymentUpdateComponent } from './setting/payment/admin-sett
 		AdminSettingDeliveryUpdateComponent, 
 		AdminSettingPaymentListComponent, 
 		AdminSettingPaymentAddComponent, 
-		AdminSettingPaymentUpdateComponent
+		AdminSettingPaymentUpdateComponent,
+		CAdminSectionHotlineComponent
 	]
 })
 export class AdminComponentModule { }

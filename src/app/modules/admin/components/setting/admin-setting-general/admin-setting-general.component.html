@@ -1,3 +1,39 @@
-<p>
-  admin-setting-general works!
-</p>
+<div class="form-group row">
+	<div class="col-sm-6">
+		<p>Icon website</p>
+		<input type="file" class="form-control">
+	</div>
+	
+</div>
+<div class="form-group row">
+	<div class="col-sm-6">
+		<input type="text" placeholder="Nhập email ..." class="form-control">
+	</div>
+	<div class="col-sm-6">
+		<input type="text" placeholder="Nhập tiêu đề ..." class="form-control">
+	</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-12">
+		<input type="text" placeholder="Nhập từ khóa ..." class="form-control">
+	</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-6">
+		<div [froalaEditor]='optionContact'></div>
+	</div>
+	<div class="col-sm-6">
+		<div [froalaEditor]='optionWorkHour'></div>
+	</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-12">
+		<div [froalaEditor]='optionFooter'></div>
+	</div>
+</div>
+<div class="form-group row">
+	<div class="col-sm-12 text-center">
+		<button class="btn btn-success" (click)="updateSetting()">Lưu lại</button> &nbsp;&nbsp;
+	</div>
+	
+</div>

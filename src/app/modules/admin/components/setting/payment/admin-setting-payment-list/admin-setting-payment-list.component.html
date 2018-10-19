@@ -1,3 +1,60 @@
-<p>
-  admin-setting-payment-list works!
-</p>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tên hình thức</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="id" (click)="gotoUpdate(1)">#1</th>
+                    <td>Giao hàng nhận tiền (COD)</td>
+                    <td><button class="btn btn-danger btn-sm" (click)="confirmDelete(1)">Xóa</button></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="id" (click)="gotoUpdate(1)">#2</th>
+                    <td>Chuyển khoản - Vietcombank</td>
+                    <td><button class="btn btn-danger btn-sm" (click)="confirmDelete(2)">Xóa</button></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="id" (click)="gotoUpdate(1)">#3</th>
+                    <td>Chuyển khoản - Techcomabank</td>
+                    <td><button class="btn btn-danger btn-sm" (click)="confirmDelete(3)">Xóa</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ul class="meal-list">
+        <li *ngFor="let meal of meals | paginate: { itemsPerPage: 10, currentPage: page }">
+            {{ meal }}
+        </li>
+    </ul>
+    <div class="has-text-centered">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deletePayment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa hình thức thanh toán</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc muốn hình thức thanh toán này ?
+      </div>
+      <div class="modal-footer">
+        <input type="hidden" name="hideId" id="idPayment">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thôi, không xóa</button>
+        <button type="button" class="btn btn-danger" (click)="deletePayment()">Vâng, xóa đi</button>
+      </div>
+    </div>
+  </div>
+</div>

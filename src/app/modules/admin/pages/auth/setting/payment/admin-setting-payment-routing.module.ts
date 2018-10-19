@@ -4,6 +4,8 @@ import { AdminPagePaymentListComponent } from './admin-page-payment-list/admin-p
 import { AdminPagePaymentAddComponent } from './admin-page-payment-add/admin-page-payment-add.component';
 import { AdminPagePaymentUpdateComponent } from './admin-page-payment-update/admin-page-payment-update.component';
 
+import { AdminComponentModule } from '../../../../components/index.module';
+
 const routes: Routes = [
 	{
 		path: '',
@@ -33,7 +35,7 @@ const routes: Routes = [
 		AdminPagePaymentAddComponent,
 		AdminPagePaymentUpdateComponent
 	],
-	imports: [RouterModule.forChild(routes)],
+	imports: [RouterModule.forChild(routes), AdminComponentModule],
 	exports: [RouterModule]
 })
 export class AdminSettingPaymentRoutingModule { }
